@@ -5,6 +5,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-block p-4 border-left-warning text-center"
+                            style="background-color:#f25521; opacity:1">
+                            <strong>
+                                <h1 style="color:#ffffff">{{ $message }}</h1>
+                            </strong>
+                        </div>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-body text-center">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"

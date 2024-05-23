@@ -29,7 +29,7 @@ class AdminSignupController extends Controller
         $admin->password = $request->password;
         $admin->securepassword = $securepassword;
         if ($admin->save()) {
-            return redirect()->route('dashboard.show')->withsuccess('Congratulations Your Account is Ready!');
+            return redirect()->route('login')->withsuccess('Congratulations Your Account is Ready!');
         } else {
             return back()->withErrors('Something is Wrong');
         }

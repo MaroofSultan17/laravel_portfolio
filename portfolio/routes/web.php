@@ -32,5 +32,6 @@ Route::post('/admin/works/add', [AdminWorksController::class, 'register_works'])
 Route::get('/admin/works/edit/{id}', [AdminWorksController::class, 'edit_works_show'])->name('works_edit.show');
 Route::put('/admin/works/update/{id}', [AdminWorksController::class, 'update_works'])->name('works.update');
 Route::delete('/admin/works/delete/{id}', [AdminWorksController::class, 'destroy_works'])->name('works.destroy');
-Route::get('/admin/profile', [AdminProfileController::class, 'index'])->name('profile');
-
+Route::get('/admin/profile', [AdminProfileController::class, 'index'])->name('profile.show');
+Route::get('/admin/profile/edit',  [AdminProfileController::class, 'profile_edit'])->name('profile_edit.show');
+Route::post('/admin/profile/edit', [AdminProfileController::class, 'edit'])->name('profile_edit.edit');

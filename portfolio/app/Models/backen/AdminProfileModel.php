@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\backend;
+namespace App\Models\backen;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class AdminProfileModel extends Model
 {
     use HasFactory;
-    protected $table = 'profile';
-    protected $primarykey = 'id';
 }

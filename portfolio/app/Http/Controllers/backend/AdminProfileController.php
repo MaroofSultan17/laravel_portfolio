@@ -8,59 +8,61 @@ use Illuminate\Http\Request;
 
 class AdminProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('backend.profile');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function profile_edit()
     {
-        //
+        return view('backend.profile-edit');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function edit(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required',
+            'skill' => 'required',
+            'facebook' => 'required|url',
+            'github' => 'required|url',
+            'instagram' => 'required|url',
+            'linkedin' => 'required|url',
+            'phoneno' => 'required|max:14',
+            'email' => 'required|email',
+            'address' => 'required',
+            'resume' => 'mimes:pdf,doc,docx|max:2048',
+            'image' => 'mimes:png,jpg,jpeg|max:2048'
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(AdminProfileModel $adminProfileModel)
-    {
-        //
-    }
+        // Reume
+        $FileName = "resume_ " . time() . "." . $request->resume->extension();
+        $FolderPath = 'uploads/resume';
+        $FilePath = $FolderPath . "/" . $FileName;
+        $request->resume->move(public_path($FolderPath), $FileName);
+        // dd($FilePath);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(AdminProfileModel $adminProfileModel)
-    {
-        //
-    }
+        // Image
+        $ImageName = "portfolio_profile_" . time() . "." . $request->image->extension();
+        $FolderPath = 'uploads/profile';
+        $ImagePath = $FolderPath . "/" . $ImageName;
+        $request->image->move(public_path($FolderPath), $ImageName);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, AdminProfileModel $adminProfileModel)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(AdminProfileModel $adminProfileModel)
-    {
-        //
+        $profile = new AdminProfileModel();
+        $ID = $profile->max('id');
+        $profile->id = $ID + 1;
+        $profile->name = $request->name;
+        $profile->skill = $request->skill;
+        $profile->facebook = $request->facebook;
+        $profile->github = $request->github;
+        $profile->instagram = $request->instagram;
+        $profile->linkedin = $request->linkedin;
+        $profile->phoneno = $request->phoneno;
+        $profile->email = $request->email;
+        $profile->resume = $FilePath;
+        $profile->address = $request->address;
+        $profile->image = $ImagePath;
+        $profile->save();
+        $profile = AdminProfileModel::find(1);
+        $data = compact('profile');
+        return redirect()->route('profile.show')->with($data)->withsuccess('Profile is Updated!');
     }
 }

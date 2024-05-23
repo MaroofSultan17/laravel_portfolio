@@ -31,23 +31,34 @@
                 <div class="authincation-content style-2">
                     <div class="row no-gutters">
                         <div class="col-xl-12 tab-content">
-                            <form id="dz_login_signup_form" class="form-validate" action="{{ route('login.valid') }}"
-                                enctype="multipart/form-data" method="POST">
-                                @csrf
+                            @if (session()->has('success') || session()->has('error'))
+
                                 @if (session()->has('success'))
-                                    <div class="alert alert-block p-4 border-left-warning"
+                                    <div class="alert alert-block p-4 border-left-warning text-center"
                                         style="background-color:#fd712c; opacity:1">
                                         <strong>
-                                            <h5 style="color:#ffffff">{{ Session::get('success') }}</h5>
+                                            <h5 style="color: #ffffff">{{ session('success') }}</h5>
+                                        </strong>
+                                    </div>
+                                @elseif (session()->has('error'))
+                                    <div class="alert alert-block p-4 border-left-warning text-center"
+                                        style="background-color:red; opacity:1">
+                                        <strong>
+                                            <h5 style="color: #ffffff">{{ session('error') }}</h5>
                                         </strong>
                                     </div>
                                 @endif
+
+                            @endif
+                            <form id="dz_login_signup_form" class="form-validate" action="{{ route('login.valid') }}"
+                                enctype="multipart/form-data" method="POST">
+                                @csrf
                                 <h3 class="text-center mb-4 text-black">Signin your account</h3>
                                 <div class="form-group mb-3">
                                     <label class="mb-1 form-label text-black">Email</label>
                                     <div>
-                                        <input type="email" class="form-control" value="{{ old('email') }}" placeholder="Email"
-                                            name="email">
+                                        <input type="email" class="form-control" value="{{ old('email') }}"
+                                            placeholder="Email" name="email">
                                         @if ($errors->has('email'))
                                             <span class="text-danger">
                                                 {{ $errors->first('email') }}

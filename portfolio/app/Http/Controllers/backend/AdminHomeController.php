@@ -35,7 +35,7 @@ class AdminHomeController extends Controller
             session()->put('email', $admin->email);
             return redirect()->route('dashboard.show');
         } else {
-            return redirect()->route('login')->withErrors('Email/Password is Incorrect!');
+            return redirect()->route('login')->with('error', 'Email/Password is Incorrect!');
         }
     }
     public function logout()

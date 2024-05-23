@@ -116,8 +116,8 @@
                         <span class="nav-text">Profile</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{{ route('profile') }}">Profile</a></li>
-                        <li><a href="{{ route('profile') }}">Edit Profile</a></li>
+                        <li><a href="{{ route('profile.show') }}">Profile</a></li>
+                        <li><a href="{{ route('profile_edit.show') }}">Edit Profile</a></li>
                     </ul>
                 </li>
                 {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -235,9 +235,7 @@
                     </ul>
                 </li> --}}
                 </ul>
-
-
-                <div class="copyright fixed-bottom">
+                <div class="copyright">
                     <p><strong>Portfolio Admin</strong> © 2024 All Rights Reserved</p>
                     <p class="fs-12">Made with <span class="heart"></span> by Maroof Sultan</p>
                 </div>
