@@ -13,7 +13,7 @@
                 @csrf
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
-                        value="{{ old('name') }}">
+                        value="{{ $profiledata->name }}">
                     <label for="name">Full Name</label>
                     @if ($errors->has('name'))
                         <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="type" name="skill" placeholder="Laravel/WEB"
-                        value="{{ old('skill') }}">
+                        value="{{ $profiledata->skill }}">
                     <label for="skill">Skill</label>
                     @if ($errors->has('skill'))
                         <span class="text-danger">{{ $errors->first('skill') }}</span>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="facebook" placeholder="facebook" name="facebook"
-                        value="{{ old('facebook') }}">
+                        value="{{ $profiledata->facebook }}">
                     <label for="facebook">Facebook Link</label>
                     @if ($errors->has('facebook'))
                         <span class="text-danger">{{ $errors->first('facebook') }}</span>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="github" placeholder="github" name="github"
-                        value="{{ old('github') }}">
+                        value="{{ $profiledata->github }}">
                     <label for="github">Github Link</label>
                     @if ($errors->has('github'))
                         <span class="text-danger">{{ $errors->first('github') }}</span>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="instagram" placeholder="instagram" name="instagram"
-                        value="{{ old('instagram') }}">
+                        value="{{ $profiledata->instagram }}">
                     <label for="instagram">Instagram Link</label>
                     @if ($errors->has('instagram'))
                         <span class="text-danger">{{ $errors->first('instagram') }}</span>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="linkedin" placeholder="linkedin" name="linkedin"
-                        value="{{ old('linkedin') }}">
+                        value="{{ $profiledata->linkedin }}">
                     <label for="linkedin">Linkedin Link</label>
                     @if ($errors->has('linkedin'))
                         <span class="text-danger">{{ $errors->first('linkedin') }}</span>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="phoneno" placeholder="phoneno" name="phoneno"
-                        value="{{ old('phoneno') }}">
+                        value="{{ $profiledata->phoneno }}">
                     <label for="phoneno">Phone Number</label>
                     @if ($errors->has('phoneno'))
                         <span class="text-danger">{{ $errors->first('phoneno') }}</span>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" placeholder="email" name="email"
-                        value="{{ old('email') }}">
+                        value="{{ $profiledata->email }}">
                     <label for="email">Email</label>
                     @if ($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="address" placeholder="address" name="address"
-                        value="{{ old('address') }}">
+                        value="{{ $profiledata->address }}">
                     <label for="address">Address</label>
                     @if ($errors->has('address'))
                         <span class="text-danger">{{ $errors->first('address') }}</span>
@@ -87,7 +87,7 @@
                     <label>Upload Resume</label>
                     <div class="input-group mt-2">
                         <input type="file" class="form-control  file-upload-browse" id="resume" name="resume"
-                            accept=".pdf,.txt,.doc,.docx">
+                            accept=".pdf,.txt,.doc,.docx" value="{{ $profiledata->resume }}">
                         @if ($errors->has('resume'))
                             <span class="text-danger">{{ $errors->first('resume') }}</span>
                         @endif
@@ -97,7 +97,7 @@
                     <label>Upload Image</label>
                     <div class="input-group mt-2">
                         <input type="file" class="form-control  file-upload-browse" id="image" name="image"
-                            accept=".png,.jpg,,.jpeg">
+                            accept=".png,.jpg,,.jpeg" value="{{ $profiledata->image }}">
                         @if ($errors->has('image'))
                             <span class="text-danger">{{ $errors->first('image') }}</span>
                         @endif

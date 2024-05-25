@@ -30,5 +30,4 @@ class ContactController extends Controller
         $contact->save();
         return back()->withSuccess('Thanks for Contacting We\'ll Contact you ASAP!');
     }
-
 }

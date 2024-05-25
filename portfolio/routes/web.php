@@ -19,10 +19,11 @@ Route::get('/works', [WorksController::class, 'index'])->name('works.maroof');
 Route::post('/contact', [ContactController::class, 'contactsubmit'])->name('contact.submit');
 
 
+
+
 #Backend
 Route::get('/admin', [AdminHomeController::class, 'index'])->name('login');
 Route::post('/admin', [AdminHomeController::class, 'login'])->name('login.valid');
-Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('logout');
 Route::get('/admin/home', [AdminHomeController::class, 'home'])->name('dashboard.show');
 Route::get('/asmin/signup', [AdminSignupController::class, 'index'])->name('signup.show');
 Route::post('/admin/signup', [AdminSignupController::class, 'register'])->name('signup.register');
@@ -33,5 +34,7 @@ Route::get('/admin/works/edit/{id}', [AdminWorksController::class, 'edit_works_s
 Route::put('/admin/works/update/{id}', [AdminWorksController::class, 'update_works'])->name('works.update');
 Route::delete('/admin/works/delete/{id}', [AdminWorksController::class, 'destroy_works'])->name('works.destroy');
 Route::get('/admin/profile', [AdminProfileController::class, 'index'])->name('profile.show');
-Route::get('/admin/profile/edit',  [AdminProfileController::class, 'profile_edit'])->name('profile_edit.show');
+Route::get('/admin/profile/edit', [AdminProfileController::class, 'profile_edit'])->name('profile_edit.show');
 Route::post('/admin/profile/edit', [AdminProfileController::class, 'edit'])->name('profile_edit.edit');
+
+Route::get('/admin/logout', [AdminHomeController::class, 'logout'])->name('logout');

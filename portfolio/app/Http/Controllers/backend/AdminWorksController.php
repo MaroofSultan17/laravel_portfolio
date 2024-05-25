@@ -11,13 +11,21 @@ class AdminWorksController extends Controller
 {
     public function index()
     {
-        $works = AdminWorksModel::get();
-        $data = compact('works');
-        return view('backend.works')->with($data);
+        if (!session()->has('email')) {
+            return redirect()->route('login');
+        } else {
+            $works = AdminWorksModel::get();
+            $data = compact('works');
+            return view('backend.works')->with($data);
+        }
     }
     public function add_works()
     {
-        return view('backend.works-add');
+        if (!session()->has('email')) {
+            return redirect()->route('login');
+        } else {
+            return view('backend.works-add');
+        }
     }
     public function register_works(Request $request)
     {
@@ -30,16 +38,13 @@ class AdminWorksController extends Controller
             'details' => 'required | min:100',
             'image' => 'required|mimes:jpg,png,jpeg|max:5000'
         ]);
-
         // dd($request);
-
         $ImageName = "portfolio_works_" . time() . "." . $request->image->extension();
         $FolderPath = 'uploads/works';
         $ImagePath = $FolderPath . "/" . $ImageName;
         $request->image->move(public_path($FolderPath), $ImageName);
         // echo $ImagePath;
         // dd();
-
         $works = new AdminWorksModel();
         $MaxID = $works->max('workid');
         $works->workid = $MaxID + 1;
@@ -55,12 +60,16 @@ class AdminWorksController extends Controller
     }
     public function edit_works_show($id)
     {
-        $works = AdminWorksModel::where('workid', $id)->first();
-        if (is_null($works)) {
-
+        if (!session()->has('email')) {
+            return redirect()->route('login');
         } else {
-            $data = compact('works');
-            return view('backend.works-edit')->with($data);
+            $works = AdminWorksModel::where('workid', $id)->first();
+            if (is_null($works)) {
+
+            } else {
+                $data = compact('works');
+                return view('backend.works-edit')->with($data);
+            }
         }
     }
     public function update_works(Request $request, $id)
@@ -73,11 +82,11 @@ class AdminWorksController extends Controller
             'languages' => 'required',
             'link' => 'required|url',
             'details' => 'required|min:100',
-            'image' => 'nullable|mimes:jpg,png,jpeg|max:5000'
+            'image' => 'nullable|mimes:jpg,png,jpeg|max:1024'
         ]);
         if ($request->hasFile('image')) {
             if ($works->image) {
-                Storage::delete('public/' . $works->image);
+                Storage::delete('uploads/' . $works->image);
             }
             $ImageName = "portfolio_works_" . time() . "." . $request->image->extension();
             $FolderPath = 'uploads/works';
@@ -98,7 +107,7 @@ class AdminWorksController extends Controller
     {
         $works = AdminWorksModel::where('workid', $id)->first();
         if ($works->image) {
-            Storage::delete('public/' . $works->image);
+            Storage::delete('uploads/' . $works->image);
         }
         $works->delete();
         return redirect()->route('works.show')->with('success', 'Work deleted successfully');

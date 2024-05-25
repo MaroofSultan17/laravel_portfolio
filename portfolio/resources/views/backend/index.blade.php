@@ -3,13 +3,12 @@
 @section('main-container')
     <div class="content-body">
         <div class="mt-4 d-md-flex justify-content-md-center">
-            <h2>Peoples contact you.</h2>
         </div>
         <div class="row container-fluid">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Works List</h4>
+                        <h4 class="card-title">Peoples contact us list</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

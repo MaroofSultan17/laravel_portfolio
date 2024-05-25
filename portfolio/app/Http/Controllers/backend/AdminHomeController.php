@@ -12,16 +12,17 @@ class AdminHomeController extends Controller
 {
     public function index()
     {
-        // $contactus = AdminContactusModel::orderBy('id', 'desc')->get();
-        // $data = compact('contactus');
-        // return view('backend.index')->with($data);
         return view('backend.login');
     }
     public function home()
     {
-        $contactus = AdminContactusModel::orderBy('id', 'desc')->get();
-        $data = compact('contactus');
-        return view('backend.index')->with($data);
+        if (!session()->has('email')) {
+            return redirect()->route('login');
+        } else {
+            $contactus = AdminContactusModel::orderBy('id', 'desc')->get();
+            $data = compact('contactus');
+            return view('backend.index')->with($data);
+        }
     }
     public function login(Request $request)
     {

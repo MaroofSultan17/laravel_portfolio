@@ -64,31 +64,34 @@
                 <div class="col-xxl-3 col-xl-3">
                     <div class="bostami-parsonal-info-area">
                         <div class="bostami-parsonal-info-wrap">
+                            <?php
+                            $profile = App\Models\frontend\ProfileModel::first();
+                            ?>
                             <div class="bostami-parsonal-info-img">
-                                <img src="{{ url('frontend/img/parsonal-info/profile.png') }}" alt="avatar">
+                                <img src="{{ url($profile->image) }}" alt="avatar">
                             </div>
                             <h4 class="bostami-parsonal-info-name">
-                                <a href="#">{{ env('NAME') }}</a>
+                                <a href="#">{{ $profile->name }}</a>
                             </h4>
-                            <span class="bostami-parsonal-info-bio mb-15">{{ env('POST') }}</span>
+                            <span class="bostami-parsonal-info-bio mb-15">{{ $profile->skill }}</span>
                             <ul class="bostami-parsonal-info-social-link mb-30">
                                 <li>
-                                    <a href="{{ env('FACEBOOK ') }}" class="facebook">
+                                    <a href="{{ $profile->facebook }}" class="facebook">
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ env('GITHUB ') }}" class="twitter">
+                                    <a href="{{ $profile->github }}" class="twitter">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ env('INSTAGRAM ') }}" class="instagram">
+                                    <a href="{{ $profile->instagram }}" class="instagram">
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ env('LINKEDIN ') }}" class="linkedin">
+                                    <a href="{{ $profile->linkedin }}" class="linkedin">
                                         <i class="fa-brands fa-linkedin-in"></i>
                                     </a>
                                 </li>
@@ -100,7 +103,7 @@
                                     </div>
                                     <div class="text">
                                         <span>Phone</span>
-                                        <p>{{ env('CONTACT') }}</p>
+                                        <p>{{ $profile->phoneno }}</p>
                                     </div>
                                 </div>
                                 <div class="bostami-parsonal-info-contact-item email">
@@ -109,7 +112,7 @@
                                     </div>
                                     <div class="text">
                                         <span>Email</span>
-                                        <p>{{ env('EMAIL') }}</p>
+                                        <p>{{ $profile->email }}</p>
                                     </div>
                                 </div>
 
@@ -119,7 +122,7 @@
                                     </div>
                                     <div class="text">
                                         <span>Location</span>
-                                        <p>{{ env('ADDRESS') }}</p>
+                                        <p>{{ $profile->address }}</p>
                                     </div>
                                 </div>
 
@@ -141,7 +144,6 @@
                                     download cv
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </div>
