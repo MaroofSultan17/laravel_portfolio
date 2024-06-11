@@ -15,6 +15,7 @@
                             <table class="table table-hover text-center">
                                 <thead>
                                     <tr>
+                                        <th scope="col">Sr #</th>
                                         <th scope="col">ID</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
@@ -22,8 +23,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    $id = 1;
+                                    ?>
                                     @foreach ($contactus as $ContactsData)
                                         <tr>
+                                            <th>{{ $id++ }}</th>
                                             <th scope="row" class="d-flex justify-content-center align-items-center">
                                                 {{ $ContactsData->id }}</th>
                                             <td>{{ $ContactsData->name }}</td>

@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="{{ url('frontend/css/meanmenu.css') }}">
     <link rel="stylesheet" href="{{ url('frontend/css/swipper.css') }}">
     <link rel="stylesheet" href="{{ url('frontend/css/main.css') }}">
+    {{-- <style>
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style> --}}
 </head>
 
 <body>
@@ -132,7 +138,7 @@
                                 </div>
                             </div>
                             <div class="bostami-parsonal-info-btn">
-                                <a class="btn-1" href="#">
+                                <a class="btn-1"href="{{ url($profile->resume) }}" download="Maroof Sultan">
                                     <span class="icon">
                                         <i class="fa-regular fa-download"></i>
                                     </span>
@@ -152,11 +158,6 @@
                         <div class="section-wrapper pr-60 pl-60 mb-60">
                             <div class="row">
                                 <div class="col-12">
-                                    <ul class="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
-                                        <li class="fillter-btn is-checked " data-filter="*">All</li>
-                                    </ul>
-                                </div>
-                                <div class="col-11">
                                     <div id="fillter-item-active" class="fillter-item-wrap">
                                         <div class="grid-sizer"></div>
                                         @foreach ($works as $work)
@@ -167,8 +168,7 @@
                                                         <img src="{{ url($work->image) }}" alt="">
                                                     </a>
                                                     <span class="item-subtitle">{{ $work->name }} ,
-                                                        {{ $work->languages }}
-                                                    </span>
+                                                        {{ $work->languages }} </span>
                                                     <h6 class="item-title">
                                                         <a href="#" data-bs-toggle="modal"
                                                             data-bs-target="#model-{{ $work->workid }}"></a>{{ $work->client }}</a>

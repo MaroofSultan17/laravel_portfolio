@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+$admin = App\Models\backend\AdminSignupModel::first();
+?>
 
 <head>
     <title>@yield('sitetitle') | {{ env('SITETITLE') }}</title>
     <meta charset="utf-8">
     <meta name="author" content="DexignZone">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <link rel="icon" type="image/png" sizes="16x16" href="{{ url('backend/images/favicon.png') }}"> --}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url('backend/images/favicon/android-chrome-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url('backend/images/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('backend/images/favicon/favicon-16x16.png') }}">
@@ -60,7 +62,7 @@
                                     role="button" data-bs-toggle="dropdown">
                                     <img src="{{ url('backend/images/profile.png') }}" width="20" alt="/">
                                     <div class="header-info">
-                                        <span class="fs-20 font-w500">{{ env('NAME') }}</span>
+                                        <span class="fs-20 font-w500">{{ $admin->fullname }}</span>
                                         <small>Super Admin</small>
                                     </div>
                                 </a>

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\frontend\ContactModel;
 use Illuminate\Http\Request;
+use App\Mail\SendEmail;
+
+use Mail;
+
 
 class ContactController extends Controller
 {
@@ -20,7 +24,6 @@ class ContactController extends Controller
             'email' => 'required | email',
             'message' => 'required'
         ]);
-        // dd($request);
         $contact = new ContactModel();
         $maxID = $contact->max('id');
         $contact->id = $maxID + 1;
@@ -28,6 +31,7 @@ class ContactController extends Controller
         $contact->email = $request->email;
         $contact->message = $request->message;
         $contact->save();
+        Mail::to('maroofsultan17@gmail.com')->send(new SendEmail($request));
         return back()->withSuccess('Thanks for Contacting We\'ll Contact you ASAP!');
     }
 }
