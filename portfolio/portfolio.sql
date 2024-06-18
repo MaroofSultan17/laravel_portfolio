@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3300
--- Generation Time: May 24, 2024 at 11:29 PM
+-- Generation Time: Jun 12, 2024 at 09:05 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -88,7 +88,12 @@ CREATE TABLE `contact_us` (
 --
 
 INSERT INTO `contact_us` (`id`, `name`, `email`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Maroof Sultan', 'maroofsultan17@gmail.com', 'This is Testing', '2024-05-24 14:28:50', '2024-05-24 14:28:50');
+(1, 'Maroof Sultan', 'maroofsultan17@gmail.com', 'This is Testing', '2024-05-24 14:28:50', '2024-05-24 14:28:50'),
+(2, 'Maroof Sultan', 'maroofsultan17@gmail.com', '98765432uytfds', '2024-06-11 13:38:15', '2024-06-11 13:38:15'),
+(3, 'Maroof Sultan', 'maroofsultan17@gmail.com', 'qwertyuio', '2024-06-11 13:58:02', '2024-06-11 13:58:02'),
+(4, 'Maroof Sultan', 'fa21-bcs-024@students.cuisahiwal.edu.pk', 'this is testing', '2024-06-11 14:01:44', '2024-06-11 14:01:44'),
+(5, 'Maroof Sultan', 'maroofsultan17@gmail.com', 'This is testing with new Subject', '2024-06-11 14:02:53', '2024-06-11 14:02:53'),
+(6, 'Maroof Sultan', 'maroofsultan17@gmail.com', 'This is Testing', '2024-06-11 14:04:09', '2024-06-11 14:04:09');
 
 -- --------------------------------------------------------
 
@@ -206,7 +211,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id`, `name`, `skill`, `facebook`, `github`, `instagram`, `linkedin`, `phoneno`, `email`, `address`, `resume`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Maroof Sultan', 'Laravel/WEB', 'https://www.facebook.com/maroof.sultan.750', 'https://github.com/MaroofSultan17', 'https://www.instagram.com/maroof.sultan.750/', 'https://www.linkedin.com/in/maroof-sultan-081b33220/', '+309-0742546', 'maroofsultan17@gmail.com', 'Mohalla Noor Shah near stop # 3 Kamalia', 'uploads/resume/resume_ 1716569807.pdf', 'storage/profile/portfolio_profile_1716582206.png', '2024-05-24 11:56:47', '2024-05-24 15:23:26');
+(1, 'Maroof Sultan', 'Laravel/WEB', 'https://www.facebook.com/maroof.sultan.750', 'https://github.com/MaroofSultan17', 'https://www.instagram.com/maroof.sultan.750/', 'https://www.linkedin.com/in/maroof-sultan-081b33220/', '+309-0742546', 'maroofsultan17@gmail.com', 'Mohalla Noor Shah near stop # 3 Kamalia', 'uploads/resume/resume_ 1718133052.pdf', 'uploads/profile/portfolio_profile_1716619284.png', '2024-05-24 11:56:47', '2024-06-11 14:10:52');
 
 -- --------------------------------------------------------
 
@@ -228,8 +233,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('HkgrlUk3LCo3gC1omzAcH5WJcNOPgINusiipGoS7', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSmNpUEgxblhMN2kxTTRtMHR6aXVlUlVjb0tvUklRZnpPR2tJdlVHRiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jb250YWN0Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1716582853),
-('vb8yZhqJhdiwUO4Y97NXP2DUNbFrE1Qeh3snzjtD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUjRtZkx1R0M4YXc4YldiWDV2MklhR3c4SGFNdXhDNWtPaldRTzUyeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1716584346);
+('NHS4HPeY9j1VZDhjYm5dnHkFemWe7PcxH2ARmZAF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNkdKcGJTUTFNQ3RBelBKWFNnNmRIVlM1TzRGVlphb1RQNXpZb3FhQSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1718134640);
 
 -- --------------------------------------------------------
 
@@ -266,6 +270,14 @@ CREATE TABLE `works` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `works`
+--
+
+INSERT INTO `works` (`workid`, `name`, `type`, `client`, `languages`, `link`, `details`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Maroof Sultan', 'Website', 'Maroof Sultan', 'Laravel, PHP, HTML5, Bootstrap5', 'http://profile.maroofsultan.me/', 'In this project, you will create a dynamic web application using Core PHP, HTML5, and Bootstrap. Core PHP will handle server-side logic, including database interactions and form processing. HTML5 will structure the content, providing semantic elements like headers, articles, and forms for a clean, accessible layout. Bootstrap will ensure your application is responsive and visually appealing, offering a range of pre-designed components such as navigation bars, buttons, and modals. As a beginner, you’ll learn to integrate these technologies to build a functional and attractive web application, enhancing your understanding of full-stack development principles.', 'uploads/works/portfolio_works_1716619210.png', '2024-05-25 01:40:10', '2024-05-25 01:40:10'),
+(2, 'Maroof Sultan', 'Website', 'Maroof Sultan', 'Laravel, PHP, HTML5, Bootstrap5', 'http://profile.maroofsultan.me/', 'In this project, you will create a dynamic web application using Core PHP, HTML5, and Bootstrap. Core PHP will handle server-side logic, including database interactions and form processing. HTML5 will structure the content, providing semantic elements like headers, articles, and forms for a clean, accessible layout. Bootstrap will ensure your application is responsive and visually appealing, offering a range of pre-designed components such as navigation bars, buttons, and modals. As a beginner, you’ll learn to integrate these technologies to build a functional and attractive web application, enhancing your understanding of full-stack development principles.', 'uploads/works/portfolio_works_1716622486.png', '2024-05-25 02:34:46', '2024-05-25 02:34:46');
 
 --
 -- Indexes for dumped tables
@@ -368,7 +380,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -404,7 +416,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `works`
 --
 ALTER TABLE `works`
-  MODIFY `workid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `workid` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

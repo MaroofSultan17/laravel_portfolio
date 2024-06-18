@@ -137,7 +137,7 @@
                                 </div>
                             </div>
                             <div class="bostami-parsonal-info-btn">
-                                <a class="btn-1" href="{{ url($profile->resume) }}" download="Maroof Sultan">
+                                <a class="btn-1" href="{{ url($profile->resume) }}" download="Maroof Sultan.pdf">
                                     <span class="icon">
                                         <i class="fa-regular fa-download"></i>
                                     </span>
